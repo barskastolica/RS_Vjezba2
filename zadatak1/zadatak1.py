@@ -10,17 +10,16 @@ import asyncio
 import time
 
 async def dohvacanje():
-    t1 = time.perf_counter()
     await asyncio.sleep(3)
     podaci = [i for i in range(1, 11)]
     print("Podaci dohvaceni")
-    t2 = time.perf_counter()
-    print(f"Vrime: {round(t2-t1, 2)} sek")
     return podaci
 
 async def main():
     rezultat = await dohvacanje()
     print(f"Podaci: {rezultat}")
     
-
+t1 = time.perf_counter()
 asyncio.run(main())
+t2 = time.perf_counter()
+print(f"Vrime: {round(t2-t1, 2)} sek")
